@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'//添加
+//apply plugin: 'java'//添加
 
 android {
     compileSdkVersion 25
@@ -19,16 +21,24 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
 }
 
-//publish {
-//    userOrg = 'zengyan'//bintray.com用户名
-//    groupId = 'com.zengyan'//jcenter上的路径
-//    artifactId = 'YanBottomDialog'//项目名称
-//    publishVersion = '1.0.0'//版本号
-//    desc = 'simple bottom dialog'//描述，不重要
-//    website = 'https://github.com/hyman/basetools'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+//lintOptions {
+//    abortOnError false
 //}
+
+publish {
+    userOrg = 'yanzeng'//bintray.com用户名
+    groupId = 'com.zengyan'//jcenter上的路径
+    artifactId = 'YanBottomDialog'//项目名称
+    repoName='ZengYanLibrary'
+    publishVersion = '1.0.1'//版本号
+    desc = 'simple,bottomdialog'//描述，不重要
+    website = 'https://github.com/ZENGYANYAN/YanLibrary'//网站，不重要；尽量模拟github上的地址，例如我这样的；当然你有地址最好了
+
+}
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
