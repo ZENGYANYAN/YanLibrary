@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
 import android.support.annotation.StyleRes;
-import android.support.annotation.StyleableRes;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -20,7 +19,7 @@ import android.widget.FrameLayout;
  * Email : 810989881@qq.com
  */
 
-public abstract class YBottomDialog extends Dialog {
+public abstract class YTopDialog extends Dialog {
 
     protected View rootView;
     private FrameLayout childView;
@@ -28,7 +27,7 @@ public abstract class YBottomDialog extends Dialog {
     private int mLayoutId;
 
 
-    public YBottomDialog(@NonNull Context context, final int layoutId,@StyleRes int themeResId) {
+    public YTopDialog(@NonNull Context context, final int layoutId, @StyleRes int themeResId) {
         super(context, themeResId);
         this.mContext = context;
         this.mLayoutId = layoutId;
@@ -51,7 +50,7 @@ public abstract class YBottomDialog extends Dialog {
                 int height = childView.getHeight();
                 lp.height = height;
                 dialogWindow.setAttributes(lp);
-                dialogWindow.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.BOTTOM);
+                dialogWindow.setGravity(Gravity.CENTER_HORIZONTAL | Gravity.TOP);
             }
         };
 

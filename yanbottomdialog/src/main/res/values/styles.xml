@@ -1,14 +1,28 @@
 <resources>
 
-
-    <style name="YBottomDialog" parent="@android:style/Theme.Dialog">
+    <style name="YDialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowBackground">@android:color/black</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowIsFloating">false</item>
+
+    </style>
+
+
+    <style name="YBottomDialog" parent="YDialog">
         <item name="android:windowAnimationStyle">@style/BottomSheetAnimationStyle</item>
         <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="YTopDialog" parent="YDialog">
+        <item name="android:windowAnimationStyle">@style/TopSheetAnimationStyle</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="YZoomDialog" parent="YDialog">
+        <item name="android:windowAnimationStyle">@style/TopSheetAnimationStyle</item>
+        <item name="android:backgroundDimEnabled">false</item>
     </style>
 
     <style name="YBottomDialog.BackGound_noChange" parent="YBottomDialog">
@@ -19,6 +33,14 @@
     <style name="BottomSheetAnimationStyle">
         <item name="android:windowEnterAnimation">@anim/bottom_sheet_show</item>
         <item name="android:windowExitAnimation">@anim/bottom_sheet_hide</item>
+    </style>
+    <style name="TopSheetAnimationStyle">
+        <item name="android:windowEnterAnimation">@anim/top_sheet_show</item>
+        <item name="android:windowExitAnimation">@anim/top_sheet_hide</item>
+    </style>
+    <style name="ZoomSheetAnimationStyle">
+        <item name="android:windowEnterAnimation">@anim/zoom_sheet_show</item>
+        <item name="android:windowExitAnimation">@anim/zoom_sheet_hide</item>
     </style>
 
 </resources>
